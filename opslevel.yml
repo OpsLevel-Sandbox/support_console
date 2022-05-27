@@ -32,7 +32,7 @@ service:
     category: health_checks
     url: https://bigriver.pingdom.com/supportconsole
     environment: 
-  - name: Splunk
+  - name: Sumologic
     category: logs
     url: https://logs.bigriver.com/supportconsole_service
     environment: Production
