@@ -4,22 +4,22 @@ service:
   name: Support Console
   lifecycle: end-of-life
   tier: tier_3
-  product: 
+  product:
   owner: internal_tools
   language: Ruby
   framework: Sinatra
   description: 'Used by the Customer Support team to manage inbound support requests. '
-  aliases: 
-  tags: 
+  aliases:
+  tags:
   repositories:
-  - name: Adams-shop/support_console
+  - name: Adams-Shop/support_console
     path: "/"
     provider: github
   tools:
   - name: Kubernetes
     category: orchestrator
     url: https://deploy.bigriver.com/supportconsole
-    environment: 
+    environment:
   - name: Sentry
     category: errors
     url: https://bigriver.sentry.com/supportconsole_service/production
@@ -31,7 +31,7 @@ service:
   - name: Pingdom
     category: health_checks
     url: https://bigriver.pingdom.com/supportconsole
-    environment: 
+    environment:
   - name: Sumologic
     category: logs
     url: https://logs.bigriver.com/supportconsole_service
@@ -40,3 +40,13 @@ service:
     category: incidents
     url: https://opslevel.pagerduty.com/services/P88H2N0
     environment: Production
+  - name: Splunk
+    category: logs
+    url: https://google.com
+    environment:
+  dependencies:
+  - alias: order_visualization_dashboard
+  - alias: order_workflow_service
+  alert_sources:
+  - type: pagerduty
+    external_id: PK0ESSH
