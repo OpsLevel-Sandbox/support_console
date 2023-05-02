@@ -17,3 +17,4 @@ ________________________
 MIT License
 
 http://www.opensource.org/licenses/mit-license
+TODO: make a better readme
